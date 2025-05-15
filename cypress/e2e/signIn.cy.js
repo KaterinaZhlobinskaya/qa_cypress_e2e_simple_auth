@@ -12,7 +12,7 @@ describe('Sign In page', () => {
 
     cy.get('#flash')
       .should('contain', 'You logged into a secure area!')
-      .and('have.class', 'success');
+      .should('have.class', 'success');
   });
 
   it('Fails to login with invalid credentials', () => {
@@ -22,7 +22,7 @@ describe('Sign In page', () => {
 
     cy.get('#flash')
       .should('contain', 'Your username is invalid!')
-      .and('have.class', 'error');
+      .should('have.class', 'error');
   });
 
   it('Logs out successfully after login', () => {
@@ -39,6 +39,6 @@ describe('Sign In page', () => {
 
     cy.get('#flash')
       .should('contain', 'You logged out of the secure area!')
-      .and('have.class', 'success');
+      .should('have.class', 'success');
   });
 });
